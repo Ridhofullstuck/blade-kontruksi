@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\kontruksicontroller;
+use App\Models\Kontruksi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,26 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('componen.home', [
-        "title" => "Home"
-    ]);
-});
+Route::get('/', [kontruksicontroller::class, 'index']);
 
-Route::get('/about', function () {
-    return view('componen.about', [
-        "title" => "About"
-    ]);
-});
+Route::get('/about', [kontruksicontroller::class, 'about']);
 
-Route::get('/galleri', function () {
-    return view('componen.galleri', [
-        "title" => "Galleri"
-    ]);
-});
+Route::get('/galleri', [kontruksicontroller::class, 'galleri']);
 
-Route::get('/contact', function () {
-    return view('componen.contact', [
-        "title" => "Contact"
-    ]);
-});
+Route::get('/contact`', [kontruksicontroller::class, 'contact']);
